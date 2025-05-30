@@ -15,11 +15,14 @@ import {
   EthBalance,
 } from '@coinbase/onchainkit/identity';
 import ArrowSvg from './svg/ArrowSvg';
-import ImageSvg from './svg/Image';
 import OnchainkitSvg from './svg/OnchainKit';
+import Image from 'next/image';
 
 const components = [
-  { name: 'Transaction', url: 'https://onchainkit.xyz/transaction/transaction' },
+  {
+    name: 'Transaction',
+    url: 'https://onchainkit.xyz/transaction/transaction',
+  },
   { name: 'Swap', url: 'https://onchainkit.xyz/swap/swap' },
   { name: 'Checkout', url: 'https://onchainkit.xyz/checkout/checkout' },
   { name: 'Wallet', url: 'https://onchainkit.xyz/wallet/wallet' },
@@ -35,19 +38,11 @@ const templates = [
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen font-sans dark:bg-background dark:text-white bg-white text-black">
-      {/* Header with Logo and Wallet */}
-      <header className="pt-4 px-6 flex items-center justify-between">
-        {/* NOVARIC Logo and Name */}
+      <header className="pt-4 pr-4 flex justify-between items-center px-6">
         <div className="flex items-center space-x-3">
-          <img
-            src="/novaric-logo.png"
-            alt="NOVARIC Logo"
-            className="h-10 w-auto"
-          />
-          <span className="text-xl font-bold tracking-wide">NOVARIC®</span>
+          <Image src="/logo.png" alt="NOVARIC® Logo" width={40} height={40} />
+          <span className="text-xl font-bold tracking-tight">NOVARIC®</span>
         </div>
-
-        {/* Wallet Section */}
         <div className="wallet-container">
           <Wallet>
             <ConnectWallet>
@@ -75,12 +70,8 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="flex-grow flex items-center justify-center">
         <div className="max-w-4xl w-full p-4">
-          <div className="w-1/3 mx-auto mb-6">
-            <ImageSvg />
-          </div>
           <div className="flex justify-center mb-6">
             <a target="_blank" rel="_template" href="https://onchainkit.xyz">
               <OnchainkitSvg className="dark:text-white text-black" />
@@ -94,7 +85,9 @@ export default function App() {
             <div className="max-w-2xl w-full">
               <div className="flex flex-col md:flex-row justify-between mt-4">
                 <div className="md:w-1/2 mb-4 md:mb-0 flex flex-col items-center">
-                  <p className="font-semibold mb-2 text-center">Explore components</p>
+                  <p className="font-semibold mb-2 text-center">
+                    Explore components
+                  </p>
                   <ul className="list-disc pl-5 space-y-2 inline-block text-left">
                     {components.map((component, index) => (
                       <li key={index}>
@@ -112,7 +105,9 @@ export default function App() {
                   </ul>
                 </div>
                 <div className="md:w-1/2 flex flex-col items-center">
-                  <p className="font-semibold mb-2 text-center">Explore templates</p>
+                  <p className="font-semibold mb-2 text-center">
+                    Explore templates
+                  </p>
                   <ul className="list-disc pl-5 space-y-2 inline-block text-left">
                     {templates.map((template, index) => (
                       <li key={index}>

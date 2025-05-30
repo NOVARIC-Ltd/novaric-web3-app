@@ -2,7 +2,8 @@
   command = "npm run build"
   publish = "build/client"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[functions]
+  directory = "build"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-core"

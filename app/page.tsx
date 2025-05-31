@@ -40,7 +40,13 @@ export default function App() {
     <div className="flex flex-col min-h-screen font-sans dark:bg-background dark:text-white bg-white text-black">
       <header className="pt-4 pr-4 flex justify-between items-center px-6">
         <div className="flex items-center space-x-3">
-          <Image src="/logo.png" alt="NOVARIC® Logo" width={40} height={40} />
+          <Image
+            src="/novaric-logo.png"
+            alt="NOVARIC® Logo"
+            width={40}
+            height={40}
+            priority
+          />
           <span className="text-xl font-bold tracking-tight">NOVARIC®</span>
         </div>
         <div className="wallet-container">
@@ -70,12 +76,17 @@ export default function App() {
         </div>
       </header>
 
+
       <main className="flex-grow flex items-center justify-center">
         <div className="max-w-4xl w-full p-4">
           <div className="flex justify-center mb-6">
             <a target="_blank" rel="_template" href="https://onchainkit.xyz">
-              <OnchainkitSvg className="dark:text-white text-black" />
-            </a>
+              <Image
+                src="/novaric-logo.png"
+                alt="NOVARIC® Logo"
+                width={40}
+                height={40}
+              />            </a>
           </div>
           <p className="text-center mb-6">
             Get started by editing
